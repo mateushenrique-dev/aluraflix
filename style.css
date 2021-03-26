@@ -1,0 +1,279 @@
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* Menu Hamburguer */
+
+.hamburguer {
+  display: block;
+}
+
+#menu-hamburguer {
+  opacity: 0;
+  position: absolute;
+  top: 5px;
+}
+
+.hamburguer label {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburguer span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: red;
+  transition: 0.25s ease-in-out;
+}
+
+.hamburguer span:nth-child(1) {
+  position: absolute;
+  top: 0;
+}
+
+.hamburguer span:nth-child(2) {
+  position: absolute;
+  top: 8px;
+}
+
+.hamburguer span:nth-child(3) {
+  position: absolute;
+  top: 16px;
+}
+
+#menu-hamburguer:checked + label span:nth-child(1) {
+  transform: rotate(-45deg);
+  top: 8px;
+}
+
+#menu-hamburguer:checked + label span:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-hamburguer:checked + label span:nth-child(3) {
+  transform: rotate(45deg);
+  top: 8px;
+}
+
+/* Menu */
+
+body {
+  background: #1e1e24;
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  padding: 20px;
+  height: 80vh;
+  background: url("https://rivollplay.net/wp-content/uploads/2018/04/popcorn-time-filmes-series-blog-rosa-brasileira-2.png")
+    center;
+  background-size: cover;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+h2 {
+  color: #fff;
+}
+
+.remove {
+  display: none !important;
+}
+
+header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.introducao {
+  position: absolute;
+  top: 25%;
+  left: 25vw;
+}
+
+.introducao h1 {
+  font-size: 136px;
+  color: red;
+}
+
+.logo img {
+  width: 100px;
+}
+
+img.filmeNormal {
+  width: 300px;
+  height: 458px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+img.filmeNormal:hover {
+  border: 8px solid red;
+}
+
+.filmes {
+  display: grid;
+  justify-content: center;
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+
+.filmes .filmesGerais {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 100px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.filmesDestaque::-webkit-scrollbar {
+  width: 7px;
+}
+
+.filmesDestaque img:hover {
+  width: 250px;
+}
+
+nav > div + div {
+  display: none;
+  background: #fff;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  position: absolute;
+  right: 125px;
+}
+
+nav > div + div.ativo {
+  display: block;
+}
+
+nav input {
+  display: block;
+  width: 150px;
+  padding: 8px 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  background: #fff;
+  border: none;
+  border-bottom: 2px solid #dbd2e0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+nav input:hover {
+  background: #dbd2e0;
+  border-radius: 5px;
+}
+
+nav input + input {
+  margin-top: 20px;
+}
+
+/* personalizar a barra em geral, aqui estou definindo 10px de largura para a barra vertical
+e 10px de altura para a barra horizontal */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* aqui é para personalizar o fundo da barra, neste caso estou colocando um fundo cinza escuro*/
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+/* aqui é a alça da barra, que demonstra a altura que você está na página
+  estou colocando uma cor azul clara nela*/
+::-webkit-scrollbar-thumb {
+  background: red;
+}
+
+.filmesDestaque {
+  display: flex;
+  gap: 40px;
+  overflow-x: scroll;
+  align-items: flex-end;
+}
+
+.filmesDestaque > div {
+  justify-items: center;
+  align-items: flex-end;
+}
+
+.filmesDestaque p {
+  font-size: 18px;
+}
+
+.filmesDestaque a {
+  display: none;
+}
+
+.filmesDestaque img {
+  width: 200px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.filmes > div > div {
+  margin-top: 40px;
+}
+
+.filmes p {
+  color: #fff;
+  margin-top: 20px;
+  font-weight: 700;
+  grid-row-start: 2;
+  margin-bottom: 30px;
+}
+
+.filmes a {
+  padding: 15px 25px;
+  background: chocolate;
+  border-radius: 40px;
+  color: #fff;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.filmes a:hover {
+  background: red;
+}
+
+@media (max-width: 790px) {
+  .introducao {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+  }
+  .container {
+    max-width: 375px;
+  }
+  .introducao h1 {
+    font-size: 72px;
+    color: red;
+  }
+}
