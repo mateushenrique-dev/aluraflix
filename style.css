@@ -106,11 +106,11 @@ header > div {
   justify-content: space-between;
 }
 
-
 .introducao {
   position: absolute;
-  top: 25%;
-  left: 25vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .introducao h1 {
@@ -266,11 +266,12 @@ e 10px de altura para a barra horizontal */
 @media (max-width: 790px) {
   .introducao {
     position: absolute;
-    top: 200px;
-    left: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .container {
-    max-width: 375px;
+    max-width: 300px;
   }
   .introducao h1 {
     font-size: 72px;
