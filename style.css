@@ -190,6 +190,11 @@ nav input:hover {
   border-radius: 5px;
 }
 
+body.iframe {
+  display: grid;
+  place-items: center;
+}
+
 nav input + input {
   margin-top: 20px;
 }
@@ -250,17 +255,106 @@ e 10px de altura para a barra horizontal */
   margin-bottom: 30px;
 }
 
-.filmes a {
+button,
+a {
   padding: 15px 25px;
   background: chocolate;
   border-radius: 40px;
   color: #fff;
   margin-bottom: 20px;
   transition: 0.3s;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 
-.filmes a:hover {
+.trailer .iframe-field {
+  position: fixed;
+  display: grid;
+  z-index: 1000;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.iframe {
+  position: relative;
+}
+
+.trailer {
+  display: grid;
+  place-items: center;
+}
+
+.closeTrailer {
+  padding: 10px 15px;
+  position: absolute;
+  right: -20px;
+  top: -15px;
+}
+
+.adicionar {
+  background: #fff;
+  max-width: 400px;
+  padding: 15px;
+  border-radius: 5px;
+  color: #333;
+  display: none;
+  position: absolute;
+  top: 200px;
+  left: 450px;
+}
+
+.adicionar.ativo {
+  display: flex;
+}
+
+.adicionar body {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.adicionar label,
+.adicionar input {
+  display: block;
+  max-width: 400px;
+}
+
+.adicionar label {
+  margin-bottom: 20px;
+}
+
+.filmesGerais > div {
+  position: relative;
+}
+
+.adicionar input {
+  margin-top: 10px;
+  height: 25px;
+  width: 350px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: aliceblue;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.adicionar span {
+  font-size: 18px;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.lixoBtn {
+  width: 30px;
   background: red;
+  padding: 5px;
+  border-radius: 50%;
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  cursor: pointer;
 }
 
 @media (max-width: 790px) {
@@ -276,5 +370,12 @@ e 10px de altura para a barra horizontal */
   .introducao h1 {
     font-size: 72px;
     color: red;
+  }
+  .adicionar {
+    position: static;
+  }
+  .adicionar label,
+  .adicionar input {
+    max-width: 250px;
   }
 }
