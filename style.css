@@ -7,6 +7,13 @@ img {
   display: block;
 }
 
+select {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #808080;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -102,8 +109,10 @@ h2 {
 
 header > div {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .introducao {
@@ -255,8 +264,7 @@ e 10px de altura para a barra horizontal */
   margin-bottom: 30px;
 }
 
-button,
-a {
+button {
   padding: 15px 25px;
   background: chocolate;
   border-radius: 40px;
@@ -266,6 +274,11 @@ a {
   cursor: pointer;
   border: none;
   outline: none;
+}
+
+button:hover,
+a:hover {
+  background: #333;
 }
 
 .trailer .iframe-field {
@@ -355,6 +368,38 @@ a {
   top: -15px;
   right: -10px;
   cursor: pointer;
+}
+
+.buscar-field {
+  display: flex;
+  align-items: center;
+}
+
+.buscar-field input {
+  border-radius: 40px;
+  height: 30px;
+  border: none;
+  padding-left: 10px;
+  font-size: 18px;
+  outline: none;
+}
+
+.buscar-field img {
+  width: 20px;
+}
+
+.buscar-field .img {
+  display: flex;
+  align-items: center;
+  background: red;
+  padding: 5px 15px;
+  border-radius: 40px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.filmeBuscado {
+  display: block;
 }
 
 @media (max-width: 790px) {
