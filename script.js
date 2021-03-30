@@ -98,12 +98,16 @@ for (let i = 0; (i < categoriaAdd.length) && (i < nomeAdd.length) && (i < imagem
 }
 document.write('</div>')
 
+function converterLink(link) {
+  return link.replace('watch?v=', 'embed/')
+}
+
 function exibirTrailer(trailerLink) {
   document.querySelector('body').classList.add('trailer')
   document.querySelector('.iframe-field').innerHTML = (`
   
   <div class="iframe">
-  <iframe class="iframe" width="760" height="415" src="${trailerLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="iframe" width="760" height="415" src="${converterLink(trailerLink)}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
   <button class="closeTrailer" onclick="closeTrailer()">X</button>
 
@@ -133,7 +137,7 @@ function adicionar() {
     const trailerFilme = document.querySelector('#linkTrailer')
     console.log(trailerFilme.value)
     if ((categoria.value) && (imagemBanner.value) && (nomeFilme.value) && (trailerFilme.value) != '') {
-      if(trailerFilme.value.startsWith('https://www.youtube.com/embed/')) {
+      if(trailerFilme.value.startsWith('https://www.youtube.com/watch?v=')) {
         if((imagemBanner.value.endsWith('.jpg')) || (imagemBanner.value.endsWith('.jpeg')) || (imagemBanner.value.endsWith('.png'))) {
           document.getElementById('categorias').classList.remove('ativo')
           categoriaAdd += `, ${categoria.value}`
@@ -146,7 +150,7 @@ function adicionar() {
           localStorage.setItem('Trailer do Conteúdo', trailerAdd)
           swal({
             title: "Bom trabalho!",
-            text: "Conteúdo adicionado corretamente!",
+            text: "Conteúdo adicionado corretamente! Reinicie o site para ver as modificações.",
             icon: "success",
           });
         }
@@ -155,7 +159,7 @@ function adicionar() {
         }
       } 
       else {
-        swal ( "Oops" ,  "O link do trailer deve ser do incorporar do youtube! Ex: https://www.youtube.com/embed/" ,  "error" )
+        swal ( "Oops" ,  "O link do trailer deve ser do  youtube!" ,  "error" )
       }
     } 
     else {
