@@ -1,4 +1,4 @@
-# Site de series e filmes
+# Aluraflix
 
 ## Tabela de conteúdo
 
